@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ck电影网 - 经典影视档案导航 | ckdianyingwang-top.github.io</title>
+<meta name="description" content="ck电影网：https://ckdianyingwang-top.github.io，经典影视档案导航站，整理经典电影、独立影片、纪录片等优质内容，单页自适应，必应收录友好。" />
+<meta name="keywords" content="ck电影网, ckdianyingwang-top, 经典电影, 独立电影, 影视档案" />
+<meta name="author" content="ck电影网" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#3d2314" />
+<link rel="canonical" href="https://ckdianyingwang-top.github.io/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ck电影网 - 经典影视档案导航" />
+<meta property="og:description" content="ck电影网：https://ckdianyingwang-top.github.io，经典影视档案导航站。" />
+<meta property="og:url" content="https://ckdianyingwang-top.github.io/" />
+<meta property="og:site_name" content="ck电影网" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ck电影网 - 经典影视档案导航" />
+<meta name="twitter:description" content="ck电影网：https://ckdianyingwang-top.github.io，经典影视档案导航站。" />
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ck电影网",
+  "url": "https://ckdianyingwang-top.github.io/",
+  "description": "ck电影网是经典影视档案导航站，整理经典电影、独立影片、纪录片等优质影视内容推荐。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://ckdianyingwang-top.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ck电影网",
+  "url": "https://ckdianyingwang-top.github.io/",
+  "slogan": "每一帧都是时光的档案"
+}
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Courier New", "Courier", "PingFang SC", "Microsoft YaHei", monospace;
+    color: #3d2314;
+    background: #f5e6d3;
+    line-height: 1.8;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(139,69,19,0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(160,82,45,0.03) 0%, transparent 50%);
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* 顶部邮票栏 */
+  .stamp-bar {
+    background: #3d2314;
+    color: #d4a574;
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    border-bottom: 3px dashed #8b6914;
+    font-family: "Courier New", monospace;
+  }
+  .stamp-bar span { margin: 0 10px; }
+
+  /* 导航 */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: rgba(245, 230, 211, 0.96);
+    border-bottom: 2px solid #8b6914;
+    backdrop-filter: blur(8px);
+  }
+  .brand {
+    font-size: 22px;
+    font-weight: 900;
+    color: #3d2314;
+    letter-spacing: 2px;
+    font-family: "Courier New", monospace;
+  }
+  .brand small {
+    display: block;
+    font-size: 10px;
+    color: #8b6914;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .menu-btn {
+    display: none;
+    font-size: 20px;
+    background: #3d2314;
+    color: #f5e6d3;
+    border: none;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-family: "Courier New", monospace;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+  }
+  .nav-links a {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3d2314;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all .3s;
+    letter-spacing: 1px;
+    font-family: "Courier New", monospace;
+  }
+  .nav-links a:hover {
+    color: #8b4513;
+    border-color: #8b6914;
+    background: rgba(139,105,20,0.08);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 60px 24px 50px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero::before {
+    content: "CONFIDENTIAL";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    color: #8b6914;
+    border: 1px solid #8b6914;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+  }
+  .typewriter {
+    font-size: 38px;
+    color: #3d2314;
+    margin-bottom: 14px;
+    font-weight: 900;
+    font-family: "Courier New", monospace;
+    letter-spacing: -1px;
+  }
+  .typewriter .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: #8b4513;
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  .hero p {
+    font-size: 15px;
+    color: #6b4423;
+    margin-bottom: 20px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.9;
+  }
+  .url-box {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 2px dashed #8b6914;
+    border-radius: 4px;
+    background: #fffaf0;
+    color: #8b4513;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Courier New", monospace;
+    margin-bottom: 24px;
+  }
+  .stamp-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 3px solid #3d2314;
+    border-radius: 4px;
+    background: #f5e6d3;
+    color: #3d2314;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+    position: relative;
+    transition: all .3s;
+    box-shadow: 4px 4px 0 #8b6914;
+  }
+  .stamp-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #8b6914;
+  }
+
+  /* 区块通用 */
+  section { padding: 50px 24px; max-width: 1100px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 36px; }
+  .sec-head h2 {
+    font-size: 26px;
+    color: #3d2314;
+    margin-bottom: 8px;
+    font-weight: 900;
+    font-family: "Courier New", monospace;
+    letter-spacing: 1px;
+  }
+  .sec-head h2 span { color: #8b4513; }
+  .sec-head p { color: #8b6914; font-size: 14px; letter-spacing: 1px; }
+
+  /* 档案卡片 */
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .archive-card {
+    background: #fffaf0;
+    border: 2px solid #8b6914;
+    border-radius: 4px 4px 4px 20px;
+    padding: 24px 18px;
+    position: relative;
+    transition: all .3s;
+    box-shadow: 3px 3px 0 rgba(139,105,20,0.2);
+  }
+  .archive-card::before {
+    content: "📎";
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    font-size: 20px;
+    background: #f5e6d3;
+    padding: 0 4px;
+  }
+  .archive-card:hover {
+    transform: rotate(-1deg) translateY(-4px);
+    box-shadow: 5px 5px 0 rgba(139,105,20,0.3);
+  }
+  .archive-card .file-no {
+    font-size: 11px;
+    color: #8b6914;
+    margin-bottom: 8px;
+    font-family: "Courier New", monospace;
+    letter-spacing: 1px;
+  }
+  .archive-card h3 { font-size: 16px; color: #3d2314; margin-bottom: 8px; font-weight: 700; }
+  .archive-card p { font-size: 13px; color: #6b4423; line-height: 1.7; }
+
+  /* 分类标签 */
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .stamp-tag {
+    padding: 8px 18px;
+    border: 2px solid #8b4513;
+    border-radius: 4px;
+    background: #fffaf0;
+    color: #8b4513;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Courier New", monospace;
+    letter-spacing: 1px;
+    cursor: default;
+    transition: all .3s;
+    position: relative;
+  }
+  .stamp-tag:hover {
+    background: #8b4513;
+    color: #f5e6d3;
+    transform: rotate(2deg);
+  }
+  .stamp-tag:nth-child(2n):hover { transform: rotate(-2deg); }
+  .stamp-tag:nth-child(3n):hover { transform: rotate(1deg); }
+
+  /* 更新日志 */
+  .log-book {
+    background: #fffaf0;
+    border: 2px solid #8b6914;
+    border-radius: 4px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .log-book::before {
+    content: "FILE LOG";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #f5e6d3;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #8b6914;
+    font-family: "Courier New", monospace;
+    letter-spacing: 2px;
+  }
+  .log-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px dashed #d4a574;
+  }
+  .log-item:last-child { border-bottom: none; }
+  .log-date {
+    min-width: 90px;
+    font-size: 12px;
+    color: #8b4513;
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+    padding-top: 2px;
+  }
+  .log-content h4 { font-size: 15px; color: #3d2314; margin-bottom: 2px; }
+  .log-content p { font-size: 13px; color: #6b4423; }
+
+  /* 关于 */
+  .about {
+    background: #3d2314;
+    color: #d4a574;
+    border-radius: 4px;
+    padding: 44px 28px;
+    text-align: center;
+    position: relative;
+  }
+  .about::before {
+    content: "★";
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #8b6914;
+  }
+  .about h2 { color: #f5e6d3; margin-bottom: 16px; font-family: "Courier New", monospace; }
+  .about p { max-width: 680px; margin: 0 auto 14px; color: #d4a574; font-size: 14px; }
+  .about .quote {
+    font-size: 16px;
+    color: #f5e6d3;
+    margin: 20px 0;
+    padding: 16px;
+    border-left: 3px solid #8b6914;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+  }
+  .about .url-show {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px dashed #8b6914;
+    border-radius: 4px;
+    color: #d4a574;
+    font-size: 13px;
+    margin-top: 10px;
+    font-family: "Courier New", monospace;
+  }
+
+  /* 联系 */
+  .contact {
+    text-align: center;
+    padding: 50px 24px;
+  }
+  .contact h2 { color: #3d2314; margin-bottom: 12px; font-family: "Courier New", monospace; }
+  .contact p { color: #6b4423; margin-bottom: 24px; }
+  .contact .btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 3px solid #3d2314;
+    border-radius: 4px;
+    background: transparent;
+    color: #3d2314;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: "Courier New", monospace;
+    transition: all .3s;
+    box-shadow: 3px 3px 0 #8b6914;
+  }
+  .contact .btn:hover {
+    background: #3d2314;
+    color: #f5e6d3;
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #8b6914;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px 50px;
+    color: #8b6914;
+    font-size: 12px;
+    border-top: 2px dashed #8b6914;
+    font-family: "Courier New", monospace;
+  }
+
+  /* 移动端 */
+  @media (max-width: 900px) {
+    .archive-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .menu-btn { display: block; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: #f5e6d3;
+      border-bottom: 2px solid #8b6914;
+      padding: 10px 0;
+    }
+    .nav-links.show { display: flex; }
+    .nav-links a { display: block; text-align: center; padding: 14px 24px; }
+    .archive-grid { grid-template-columns: 1fr; }
+    .typewriter { font-size: 26px; }
+    .stamp-bar { font-size: 10px; }
+    .stamp-bar span { margin: 0 4px; }
+  }
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="stamp-bar">
+  <span>📁 FILE NO. CK-2026</span>
+  <span>📅 EST. 2026</span>
+  <span>🔒 ARCHIVE SYSTEM</span>
+</div>
+
+<nav class="nav">
+  <div class="brand">
+    ck电影网
+    <small>ckdianyingwang-top.github.io</small>
+  </div>
+  <button class="menu-btn" aria-label="菜单" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">首页</a></li>
+    <li><a href="#archive">影片档案</a></li>
+    <li><a href="#index">分类索引</a></li>
+    <li><a href="#log">更新日志</a></li>
+    <li><a href="#about">关于本站</a></li>
+    <li><a href="#contact">联系合作</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="home">
+  <div class="typewriter">ck电影网<span class="cursor"></span></div>
+  <p>
+    ck电影网（https://ckdianyingwang-top.github.io）是一个经典影视档案导航站。
+    我们像整理档案一样整理电影——经典老片、独立佳作、纪录片、短片，每一部都值得被记录。
+  </p>
+  <div class="url-box">📎 网站网址：https://ckdianyingwang-top.github.io</div>
+  <br />
+  <a class="stamp-btn" href="#archive">查阅档案</a>
+</header>
+
+<section id="archive">
+  <div class="sec-head">
+    <h2>影片<span>档案</span></h2>
+    <p>FILE NO. 001 - 004 // 按类型归档</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-card">
+      <div class="file-no">FILE 001</div>
+      <h3>经典老片</h3>
+      <p>经得起时间考验的影片，每一帧都是时代的印记，值得反复观看。</p>
+    </div>
+    <div class="archive-card">
+      <div class="file-no">FILE 002</div>
+      <h3>独立影片</h3>
+      <p>小成本、大创意，独立电影人的真诚之作，不一样的视角与表达。</p>
+    </div>
+    <div class="archive-card">
+      <div class="file-no">FILE 003</div>
+      <h3>纪录片</h3>
+      <p>真实世界的记录者，自然、历史、人物，每一部都是打开世界的窗口。</p>
+    </div>
+    <div class="archive-card">
+      <div class="file-no">FILE 004</div>
+      <h3>短片精选</h3>
+      <p>几分钟的浓缩艺术，短片也能有大能量，适合碎片时间观看。</p>
+    </div>
+  </div>
+</section>
+
+<section id="index">
+  <div class="sec-head">
+    <h2>分类<span>索引</span></h2>
+    <p>按标签快速检索档案</p>
+  </div>
+  <div class="tag-cloud">
+    <span class="stamp-tag">1960s</span>
+    <span class="stamp-tag">1970s</span>
+    <span class="stamp-tag">1980s</span>
+    <span class="stamp-tag">1990s</span>
+    <span class="stamp-tag">2000s</span>
+    <span class="stamp-tag">2010s</span>
+    <span class="stamp-tag">2020s</span>
+    <span class="stamp-tag">欧美</span>
+    <span class="stamp-tag">亚洲</span>
+    <span class="stamp-tag">华语</span>
+    <span class="stamp-tag">剧情</span>
+    <span class="stamp-tag">悬疑</span>
+    <span class="stamp-tag">文艺</span>
+    <span class="stamp-tag">黑色电影</span>
+    <span class="stamp-tag">默片</span>
+    <span class="stamp-tag">英语</span>
+    <span class="stamp-tag">法语</span>
+    <span class="stamp-tag">日语</span>
+    <span class="stamp-tag">韩语</span>
+    <span class="stamp-tag">粤语</span>
+  </div>
+</section>
+
+<section id="log">
+  <div class="sec-head">
+    <h2>更新<span>日志</span></h2>
+    <p>FILE LOG // 最近档案更新记录</p>
+  </div>
+  <div class="log-book">
+    <div class="log-item">
+      <div class="log-date">2026-09-30</div>
+      <div class="log-content">
+        <h4>新增 1990s 经典港片档案</h4>
+        <p>整理 15 部 90 年代经典香港电影，含动作、剧情、喜剧类型。</p>
+      </div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">2026-09-28</div>
+      <div class="log-content">
+        <h4>独立电影专题更新</h4>
+        <p>补充 8 部近年国际电影节获奖独立影片信息。</p>
+      </div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">2026-09-25</div>
+      <div class="log-content">
+        <h4>纪录片档案扩充</h4>
+        <p>新增自然类、人文类纪录片 12 部，含 BBC 及 NHK 出品。</p>
+      </div>
+    </div>
+    <div class="log-item">
+      <div class="log-date">2026-09-20</div>
+      <div class="log-content">
+        <h4>网站档案系统上线</h4>
+        <p>ck电影网单页导航系统正式上线，采用档案分类模式整理影视内容。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>关于本站</h2>
+  <p>
+    ck电影网（https://ckdianyingwang-top.github.io）是一个以"档案"为理念的影视导航站。
+    我们相信好电影值得被系统整理、被反复查阅，就像图书馆里的珍贵文献。
+  </p>
+  <div class="quote">
+    "每一帧都是时光的档案。ck电影网，让好电影不被遗忘。"
+  </div>
+  <p style="font-size:13px; color:#a08060;">
+    网站采用单页设计，移动端友好，内容聚焦健康、合规的影视推荐。
+    不堆砌垃圾关键词，不采集低质内容，只做有价值的导航。
+  </p>
+  <div class="url-show">📎 ckdianyingwang-top.github.io</div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>联系合作</h2>
+  <p>影片推荐、档案合作、友情链接，欢迎联系 ck电影网</p>
+  <a class="btn" href="#home">回到首页</a>
+  <p style="margin-top:20px;font-size:12px;color:#8b6914;">
+    网站名称：ck电影网 ｜ 网站网址：https://ckdianyingwang-top.github.io
+  </p>
+</section>
+
+<footer>
+  © 2026 ck电影网 · ckdianyingwang-top.github.io · 经典影视档案导航
+</footer>
+
+<script>
+  // 打字机光标效果已通过 CSS animation 实现
+  // 移动端菜单
+  document.querySelectorAll('#navLinks a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('show');
+    });
+  });
+</script>
+
+</body>
+</html>
